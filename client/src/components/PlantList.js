@@ -9,6 +9,26 @@ export default class PlantList extends Component {
   //   - set the returned plants array to this.state.plants
 
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
+  state = {
+    plants: [],
+  };
+
+  componentDidMount() {
+    this.fetchPlants()
+  }
+  fetchPlants = () => {
+    fetch(`http://localhost:3333/plants`)
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          plants: data.plantsData,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   render() {
     return (
       <main className="plant-list">
