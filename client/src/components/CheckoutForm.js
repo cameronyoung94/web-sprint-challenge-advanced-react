@@ -62,7 +62,6 @@ const CheckoutForm = () => {
         </label>
         <button>Checkout</button>
       </form>
-
       {showSuccessMessage && (
         <div className="success-message" data-testid="successMessage">
           <p>
@@ -83,5 +82,4 @@ const CheckoutForm = () => {
     </>
   );
 };
-
 export default CheckoutForm;
